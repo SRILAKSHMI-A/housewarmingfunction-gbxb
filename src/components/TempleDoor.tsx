@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import templeDoorLeft from "@/assets/temple-door-left.png";
-import templeDoorLeft from "@/assets/temple-door-left.png";
+import templeDoorLeft from "@/assets/temple-door-right.png";
 
 
 interface TempleDoorProps {
