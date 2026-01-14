@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sacred Mangalagaram Palette */
+    --background: 39 45% 96%;
+    --foreground: 15 45% 20%;
+
+    --card: 39 50% 94%;
+    --card-foreground: 15 45% 20%;
+
+    --popover: 39 45% 96%;
+    --popover-foreground: 15 45% 20%;
+
+    /* Sacred Gold - Primary */
+    --primary: 36 65% 55%;
+    --primary-foreground: 39 45% 98%;
+
+    /* Sandalwood - Secondary */
+    --secondary: 30 35% 88%;
+    --secondary-foreground: 15 45% 25%;
+
+    /* Muted Cream */
+    --muted: 35 30% 90%;
+    --muted-foreground: 15 25% 45%;
+
+    /* Kumkum Red - Accent */
+    --accent: 5 70% 45%;
+    --accent-foreground: 39 45% 98%;
+
+    /* Deep Maroon - Destructive */
+    --destructive: 0 65% 35%;
+    --destructive-foreground: 39 45% 98%;
+
+    --border: 30 30% 82%;
+    --input: 30 30% 85%;
+    --ring: 36 65% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom Sacred Colors */
+    --gold-light: 43 75% 75%;
+    --gold-dark: 36 70% 40%;
+    --sandalwood: 25 40% 80%;
+    --turmeric: 45 85% 60%;
+    --vermillion: 5 75% 50%;
+    --temple-brown: 15 50% 25%;
+    --ivory: 40 50% 97%;
+    --sacred-cream: 38 55% 92%;
+
+    /* Gradients */
+    --gradient-sacred: linear-gradient(135deg, hsl(43 75% 75%) 0%, hsl(36 65% 55%) 50%, hsl(25 40% 80%) 100%);
+    --gradient-golden-hour: linear-gradient(180deg, hsl(40 60% 95%) 0%, hsl(36 50% 88%) 50%, hsl(30 45% 82%) 100%);
+    --gradient-divine: radial-gradient(ellipse at center, hsl(43 75% 85% / 0.6) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-sacred: 0 4px 20px -2px hsl(36 65% 55% / 0.25);
+    --shadow-soft: 0 8px 30px -4px hsl(15 45% 20% / 0.1);
+    --shadow-glow: 0 0 40px hsl(43 75% 75% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 15 40% 8%;
+    --foreground: 39 45% 92%;
+
+    --card: 15 35% 12%;
+    --card-foreground: 39 45% 92%;
+
+    --popover: 15 40% 8%;
+    --popover-foreground: 39 45% 92%;
+
+    --primary: 36 65% 55%;
+    --primary-foreground: 15 45% 10%;
+
+    --secondary: 15 30% 18%;
+    --secondary-foreground: 39 45% 90%;
+
+    --muted: 15 25% 20%;
+    --muted-foreground: 30 20% 65%;
+
+    --accent: 5 60% 50%;
+    --accent-foreground: 39 45% 98%;
+
+    --destructive: 0 65% 40%;
+    --destructive-foreground: 39 45% 98%;
+
+    --border: 15 25% 22%;
+    --input: 15 25% 22%;
+    --ring: 36 65% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .text-gradient-sacred {
+    background: linear-gradient(135deg, hsl(var(--gold-dark)) 0%, hsl(var(--primary)) 50%, hsl(var(--gold-light)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-sacred {
+    background: var(--gradient-sacred);
+  }
+
+  .bg-gradient-golden-hour {
+    background: var(--gradient-golden-hour);
+  }
+
+  .shadow-sacred {
+    box-shadow: var(--shadow-sacred);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Kolam Pattern Animation */
+  @keyframes kolam-draw {
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes incense-drift {
+    0% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px) rotate(5deg);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-40px) translateX(-5px) rotate(-3deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes bell-sway {
+    0%, 100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .animate-float {
+    animation: float-gentle 4s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-incense {
+    animation: incense-drift 4s ease-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary) / 0) 0%,
+      hsl(var(--primary) / 0.3) 50%,
+      hsl(var(--primary) / 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .animate-bell {
+    animation: bell-sway 2s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  /* Decorative Border */
+  .border-sacred {
+    border: 2px solid transparent;
+    background: 
+      linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary))) border-box;
+    border-radius: var(--radius);
+  }
+
+  /* Sacred Divider */
+  .divider-sacred {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)), transparent);
+  }
+}
